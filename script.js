@@ -32,13 +32,13 @@ function downloadDataset(round) {
 
     switch (round) {
         case 1:
-            filePath = 'assests/round1_logs.csv';
+            filePath = './assets/round1_logs.csv'; // Corrected path
             break;
         case 2:
-            filePath = 'assests/round2.zip';
+            filePath = './assets/round2.zip'; // Corrected path
             break;
         case 3:
-            filePath = 'assests/round3_logs.csv';
+            filePath = './assets/round3_logs.csv'; // Corrected path
             break;
         default:
             console.error('Invalid round selected.');

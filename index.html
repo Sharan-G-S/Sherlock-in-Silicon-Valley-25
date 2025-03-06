@@ -134,6 +134,7 @@
             <button onclick="prevPage('page3')">Previous</button>
             <button onclick="nextPage('page5')">Next</button>
         </div>
+
         <!-- Page 5: Game Page -->
         <div id="page5" class="page">
             <div class="header">
@@ -145,84 +146,123 @@
             <p>Analyze security logs to identify suspicious activities, trace unusual logins, and unmask hidden patterns.</p>
             <button onclick="startLogAnalysis()">Start Log Analysis</button>
             
-            <h2>🧩 Game 2: Encrypted Image Puzzle</h2>
-            <p>Rearrange encrypted images containing hidden clues to reveal the hacker’s next move.</p>
-            <button onclick="startImagePuzzle()">Start Puzzle</button>
-            
-            <h2>💬 Game 3: Coded Chat Investigation</h2>
-            <p>Decipher encrypted hacker messages using AI-powered sentiment analysis.</p>
-            <button onclick="startChatInvestigation()">Start Investigation</button>
-            
             <p>🏆 Solve all challenges and reveal the true culprits before it's too late!</p>
             <button onclick="prevPage('page4')">Previous</button>
         </div>
+
         <!-- Page 6: Log Analysis Game -->
-<div id="page6" class="page">
-    <div class="header">
-        <h1>🔍 Log Analysis Game</h1>
+        <div id="page6" class="page">
+            <div class="header">
+                <h1>🔍 Log Analysis Game</h1>
+            </div>
+            <p>Analyze security logs to identify suspicious activities, trace unusual logins, and unmask hidden patterns.</p>
+            <a href="datasets/log_analysis.csv" download="Log_Analysis_Dataset.csv">
+                <button>📥 Download Log Dataset</button>
+            </a>
+            <button onclick="prevPage('page5')">Previous</button>
+            <button onclick="nextPage('page7')">Next</button>
+        </div>
+
+        <!-- Page 7: Encrypted Image Puzzle Game -->
+        <div id="page7" class="page">
+            <div class="header">
+                <h1>🧩 Encrypted Image Puzzle</h1>
+            </div>
+            <p>Rearrange encrypted images containing hidden clues to reveal the hacker’s next move.</p>
+            <a href="datasets/encrypted_images.zip" download="Encrypted_Images.zip">
+                <button>📥 Download Image Dataset</button>
+            </a>
+            <button onclick="prevPage('page6')">Previous</button>
+            <button onclick="nextPage('page8')">Next</button>
+        </div>
+
+        <!-- Page 8: Coded Chat Investigation Game -->
+        <div id="page8" class="page">
+            <div class="header">
+                <h1>💬 Coded Chat Investigation</h1>
+            </div>
+            <p>Decipher encrypted hacker messages using AI-powered sentiment analysis.</p>
+            <a href="datasets/chat_messages.csv" download="Chat_Investigation_Dataset.csv">
+                <button>📥 Download Chat Dataset</button>
+            </a>
+            <button onclick="prevPage('page7')">Previous</button>
+            <button onclick="nextPage('page9')">Submit Report</button>
+        </div>
+
+        <!-- Page 9: Report Submission -->
+        <div id="page9" class="page">
+            <div class="header">
+                <h1>📄 Submit Your Final Report</h1>
+            </div>
+            <p><strong>Submit the list of culprits in the Document format.</strong></p>
+            <p>Upload your final report containing the names of the 4-6 culprits, evidence, and their connections.</p>
+            
+            <!-- Google Drive Upload Instructions -->
+            <div class="drive-upload">
+                <p>👉 <strong>Step 1:</strong> Click the button below to open the Google Drive upload page.</p>
+                <p>👉 <strong>Step 2:</strong> Upload your document (in .doc, .docx, or .pdf format).</p>
+                <p>👉 <strong>Step 3:</strong> After uploading, return to this page and click "Next" to proceed.</p>
+                
+                <!-- Google Drive Upload Link -->
+                <a href="https://drive.google.com/drive/folders/YOUR_FOLDER_ID" target="_blank">
+                    <button>📤 Upload Document to Google Drive</button>
+                </a>
+            </div>
+
+            <!-- Next Button -->
+            <div class="next-button">
+                <button onclick="nextPage('page10')">Next</button>
+            </div>
+
+            <!-- Navigation Button -->
+            <button onclick="prevPage('page8')">Previous</button>
+        </div>
+
+        <!-- Page 10: Confirmation -->
+        <div id="page10" class="page">
+            <div class="header">
+                <h1>🎉 Report Submitted Successfully!</h1>
+            </div>
+            <p>Thank you for submitting your report. We will review your findings and get back to you soon.</p>
+            <p><strong>Made By DA of AI & DS</strong></p>
+            
+            <!-- Navigation Buttons -->
+            <button onclick="prevPage('page9')">Previous</button>
+            <button onclick="exitGame()">Exit</button>
+        </div>
+
+        <!-- Page 11: Exit Page -->
+        <div id="page11" class="page">
+            <div class="header">
+                <h1>⚠️ Your Device Has Been Hacked!</h1>
+            </div>
+            <p>Thank you for participating in the Sherlock Investigation. Your device has been hacked as part of the simulation. Don't worry, it's all in good fun!</p>
+            <p>We'll meet you at the next Sherlock Investigation with AI. Stay tuned! 🕵️‍♂️</p>
+            <button onclick="location.reload()">Restart Game</button>
+        </div>
     </div>
-    <p>Analyze security logs to identify suspicious activities, trace unusual logins, and unmask hidden patterns.</p>
-    <a href="datasets/log_analysis.csv" download="Log_Analysis_Dataset.csv">
-        <button>📥 Download Log Dataset</button>
-    </a>
-    <button onclick="prevPage('page5')">Previous</button>
-    <button onclick="nextPage('page7')">Next</button>
-</div>
 
-<!-- Page 7: Encrypted Image Puzzle Game -->
-<div id="page7" class="page">
-    <div class="header">
-        <h1>🧩 Encrypted Image Puzzle</h1>
-    </div>
-    <p>Rearrange encrypted images containing hidden clues to reveal the hacker’s next move.</p>
-    <a href="datasets/encrypted_images.zip" download="Encrypted_Images.zip">
-        <button>📥 Download Image Dataset</button>
-    </a>
-    <button onclick="prevPage('page6')">Previous</button>
-    <button onclick="nextPage('page8')">Next</button>
-</div>
+    <!-- JavaScript for Page Navigation -->
+    <script>
+        function nextPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
 
-<!-- Page 8: Coded Chat Investigation Game -->
-<div id="page8" class="page">
-    <div class="header">
-        <h1>💬 Coded Chat Investigation</h1>
-    </div>
-    <p>Decipher encrypted hacker messages using AI-powered sentiment analysis.</p>
-    <a href="datasets/chat_messages.csv" download="Chat_Investigation_Dataset.csv">
-        <button>📥 Download Chat Dataset</button>
-    </a>
-    <button onclick="prevPage('page7')">Previous</button>
-    <button onclick="prevPage('page5')">Back to Game Menu</button>
-</div>
-</div>
+        function prevPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
 
-<!-- JavaScript for Page Navigation -->
-<script>
-    function nextPage(pageId) {
-        document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-        document.getElementById(pageId).classList.add('active');
-    }
+        function startLogAnalysis() {
+            alert("Log Analysis Game Starting...");
+            nextPage('page6');
+        }
 
-    function prevPage(pageId) {
-        document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-        document.getElementById(pageId).classList.add('active');
-    }
-
-    function startLogAnalysis() {
-        alert("Log Analysis Game Starting...");
-        nextPage('page6');
-    }
-
-    function startImagePuzzle() {
-        alert("Encrypted Image Puzzle Starting...");
-        nextPage('page7');
-    }
-
-    function startChatInvestigation() {
-        alert("Coded Chat Investigation Starting...");
-        nextPage('page8');
-    }
-    
-</script>
+        function exitGame() {
+            // Navigate to the static page (Page 11)
+            nextPage('page11');
+        }
+    </script>
 </body>
 </html>

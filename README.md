@@ -110,7 +110,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## 🙏 Acknowledgments  
 - Inspired by the works of **Sir Arthur Conan Doyle**.  
-- Built with ❤️ by developers passionate about storytelling and technology.  
+- Built with 💚 by Sharan(Developer)  passionate about Storytelling and Technology.  
 
 ---
 
